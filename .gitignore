@@ -99,6 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
-debug1.png
-debug2.png
+a4tr_login.png
+be4_login.png
 results.png

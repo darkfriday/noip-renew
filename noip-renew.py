@@ -70,12 +70,11 @@ class Robot:
             self.browser.save_screenshot("be4_login.png")
 
         self.logger.log("Logging in...")
-        ele_usr = self.browser.find_element_by_name("username")
-        ele_pwd = self.browser.find_element_by_name("password")
+        ele_usr = self.browser.find_element_by_xpath("//form[@id='clogs']/input[@name='username']")
+        ele_pwd = self.browser.find_element_by_xpath("//form[@id='clogs']/input[@name='password']")
         ele_usr.send_keys(self.username)
         ele_pwd.send_keys(base64.b64decode(self.password).decode('utf-8'))
-        #self.browser.find_element_by_name("Login").click()
-        ele_usr.submit()
+        self.browser.find_element_by_xpath("//form[@id='clogs']/button[@type='submit']").click()
         if self.debug > 1:
             time.sleep(1)
             self.browser.save_screenshot("a4tr_login.png")
